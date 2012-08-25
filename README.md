@@ -6,10 +6,10 @@ Eclipse plugin for Kompics development support
 Projects
 --------
 There are 4 projects that make up the plugin:
-KompicsIDE <-- The actual plugin containing UI elements, actions, model scanner and validator
-KompicsMetaModel <-- an EMF eCore model for Kompics that is used by the IDE
-KompicsIDE Feature <-- a feature project which bundles the two above
-KompicsIDE Update <-- an update site projects for the KompicsIDE feature
+- KompicsIDE <-- The actual plugin containing UI elements, actions, model scanner and validator
+- KompicsMetaModel <-- an EMF eCore model for Kompics that is used by the IDE
+- KompicsIDE Feature <-- a feature project which bundles the two above
+- KompicsIDE Update <-- an update site projects for the KompicsIDE feature
 
 
 Installation
