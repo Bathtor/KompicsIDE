@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/KompicsMetaModel/src" modelPluginID="KompicsMetaModel"
+    modelName="KompicsComponents" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>kompicsComponents.ecore</foreignModel>
+  <genPackages prefix="KompicsComponents" basePackage="se.sics.kompics.model" disposableProviderFactory="true"
+      ecorePackage="kompicsComponents.ecore#/">
+    <genClasses ecoreClass="kompicsComponents.ecore#//Component">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Component/provides"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Component/requires"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute kompicsComponents.ecore#//Component/var"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Component/type"/>
+    </genClasses>
+    <genClasses ecoreClass="kompicsComponents.ecore#//Port">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Port/subscribers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Port/portType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Port/component"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute kompicsComponents.ecore#//Port/provided"/>
+    </genClasses>
+    <genClasses ecoreClass="kompicsComponents.ecore#//Handler">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Handler/eventType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Handler/subscriptions"/>
+    </genClasses>
+    <genClasses ecoreClass="kompicsComponents.ecore#//Channel">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Channel/connects"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Channel/portType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Channel/provided"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Channel/required"/>
+    </genClasses>
+    <genClasses ecoreClass="kompicsComponents.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute kompicsComponents.ecore#//Event/type"/>
+    </genClasses>
+    <genClasses ecoreClass="kompicsComponents.ecore#//PortType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute kompicsComponents.ecore#//PortType/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//PortType/indications"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//PortType/requests"/>
+    </genClasses>
+    <genClasses ecoreClass="kompicsComponents.ecore#//ComponentDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute kompicsComponents.ecore#//ComponentDefinition/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//ComponentDefinition/requires"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//ComponentDefinition/provides"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//ComponentDefinition/handlers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//ComponentDefinition/instances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//ComponentDefinition/subscriptions"/>
+    </genClasses>
+    <genClasses ecoreClass="kompicsComponents.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute kompicsComponents.ecore#//Model/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Model/portTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Model/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Model/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Model/channels"/>
+    </genClasses>
+    <genClasses ecoreClass="kompicsComponents.ecore#//Subscription">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Subscription/handler"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference kompicsComponents.ecore#//Subscription/port"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

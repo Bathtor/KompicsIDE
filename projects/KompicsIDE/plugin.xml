@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Model Views"
+            id="KompicsIDE">
+      </category>
+      <view
+            name="Kompics Model View"
+            icon="icons/KompicsIDE.gif"
+            category="KompicsIDE"
+            class="se.sics.kompics.ide.views.ModelView"
+            id="se.sics.kompics.ide.views.ModelView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="se.sics.kompics.ide.views.ModelView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension
+         id="kompicsModelBuilder"
+         name="Kompics Model Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="se.sics.kompics.ide.builder.KompicsModelBuilder">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         id="kompicsNature"
+         name="Kompics Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="se.sics.kompics.ide.builder.KompicsNature">
+         </run>
+      </runtime>
+      <builder
+            id="KompicsIDE.kompicsModelBuilder">
+      </builder>
+   </extension>
+   <extension point="org.eclipse.core.expressions.definitions">
+      <definition id="se.sics.kompics.ide.expressions.project">
+         <iterate ifEmpty="false">
+            <adapt type="org.eclipse.core.resources.IProject">
+            </adapt>
+         </iterate>
+      </definition>
+   </extension>
+   
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="popup:org.eclipse.ui.popup.any">
+         <command commandId="se.sics.kompics.ide.addremkompicsnature"
+               id="addremovKompicsNature"
+               label="Add/Remove Kompics Nature"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <or>
+                  <with variable="activeMenuSelection">
+                     <reference definitionId="se.sics.kompics.ide.expressions.project"/>
+                  </with>
+                  <with variable="activeMenuEditorInput">
+                     <reference definitionId="se.sics.kompics.ide.expressions.project"/>
+                  </with>
+               </or>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.commands">
+   		<command
+            categoryId="se.sics.kompics.ide.builder.commands"
+            defaultHandler="se.sics.kompics.ide.builder.ToggleNatureHandler"
+            id="se.sics.kompics.ide.addremkompicsnature"
+            name="Add/Remove Kompics Nature">
+      	</command>
+      	<command
+            categoryId="se.sics.kompics.ide.builder.commands"
+            defaultHandler="se.sics.kompics.ide.views.FocusViewHandler"
+            id="se.sics.kompics.ide.focusmodelviewer"
+            name="Focus Model Viewer">
+      	</command>
+      	<category
+            name="Kompics"
+            description="Kompics IDE Commands"
+            id="se.sics.kompics.ide.builder.commands">
+      </category>
+ 	</extension>
+   <extension
+         id="modelProblem"
+         name="Kompics Model Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+	<extension point="org.eclipse.ui.bindings">
+		<key sequence="Ctrl+K"
+			commandId="se.sics.kompics.ide.focusmodelviewer"
+			schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+			contextId="org.eclipse.ui.contexts.window"/>
+	</extension>
+ <extension
+       point="org.eclipse.ui.editors">
+    <editor
+          class="se.sics.kompics.ide.editor.KompicsModelEditor"
+          default="true"
+          extensions="kompicscomponents"
+          id="se.sics.kompics.ide.editor.KompicsModelEditor"
+          name="Kompics Model Editor">
+    </editor>
+ </extension>
+</plugin>
