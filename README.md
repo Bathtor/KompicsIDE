@@ -14,7 +14,7 @@ There are 4 projects that make up the plugin:
 
 Installation
 ------------
-For Kompics development: Install plugin and dependencies from cloud1.sics.se update site into an existing Eclipse Juno installation
+For Kompics development: Install plugin and dependencies from [cloud1.sics.se][repo] update site into an existing Eclipse Juno installation
 
 For KompicsIDE plugin development: clone this repository and import the four projects into Eclipse Juno installation
 
@@ -24,3 +24,5 @@ Usage
 1. To enable Kompics nature right-click a Java project and hit "Add/Remove Kompics Nature" in the dropdown menu
 2. To open the Kompics Model View go to Window -> Show View -> Other... and search for "Kompics"
 3. The view will automatically update when project is built. To force immediate update do a clean followed by a rebuild
+
+[repo]: http://cloud1.sics.se
