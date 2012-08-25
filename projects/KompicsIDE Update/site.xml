@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="KompicsIDE Update" url="http://cloud1.sics.se">
+      KompicsIDE Update Site
+   </description>
+   <feature url="features/KompicsIDE_0.1.0.jar" id="KompicsIDE" version="0.1.0">
+      <category name="KompicsIDE"/>
+   </feature>
+   <category-def name="KompicsIDE" label="KompicsIDE">
+      <description>
+         Kompics IDE for Eclipse
+      </description>
+   </category-def>
+</site>

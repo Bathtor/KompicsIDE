@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="KompicsIDE"
+      label="KompicsIDE"
+      version="0.1.0"
+      provider-name="SICS">
+
+   <description>
+      This plugin provides support to improve development efficiency for Kompics based applications.
+
+It features some error checking for dynamic aspects of the system and a view that allows for quick browsing of the projects model elements.
+   </description>
+
+   <copyright url="http://www.gnu.org/licenses/gpl.html">
+      Copyright (c) 2012 Lars Kroll.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the GNU Public License v3.0
+which accompanies this distribution, and is available at
+http://www.gnu.org/licenses/gpl.html
+   </copyright>
+
+   <license url="http://www.gnu.org/licenses/gpl.html">
+      see license.txt
+   </license>
+
+   <url>
+      <update label="KompicsIDE Update" url="http://cloud1.sics.se"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jdt.core" version="3.8.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.8.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views" version="3.6.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.8.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.ui" version="3.8.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gef" version="3.8.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.8.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="KompicsIDE"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="KompicsMetaModel"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
